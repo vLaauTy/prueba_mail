@@ -11,7 +11,7 @@ export const Formulario = () => {
   
   return (
     <div>
-      <form name="contact" method="post" data-netlify="true" onSubmit="submit">
+      <form name="contact" method="post" data-netlify="true" onSubmit="submit" netlify>
  
   <input type="hidden" name="form-name" value="contact" />
   <div>
