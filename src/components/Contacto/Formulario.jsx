@@ -10,32 +10,16 @@ let styles = {
 export const Formulario = () => {
   
   return (
-    <div>
-      <form name="contact" method="post" data-netlify="true" onSubmit="submit" netlify>
- 
-  <input type="hidden" name="form-name" value="contact" />
-  <div>
-    <label>First Name <br/>
-    <input type="text" name="first-name"/>
-    </label>
-  </div>
-
-  <div>
-    <label htmlFor="email">Email <br/>
-    <input id="email" type="email" name="email"/>
-    </label>
-  </div>
-
-  <div>
-    <label >Mensaje <br/>
-    <textarea name="comments" id="" cols="30" rows="10"></textarea>
-    </label>
-  </div>
-
-
+    <form name="contact" netlify>
+  <p>
+    <label>Name <input type="text" name="name" /></label>
+  </p>
+  <p>
+    <label>Email <input type="email" name="email" /></label>
+  </p>
+  <p>
     <button type="submit">Send</button>
-  
+  </p>
 </form>
-    </div>
   );
 };
