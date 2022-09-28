@@ -59,7 +59,7 @@ export const Formulario = () => {
   return (
     <div>
       <h2>Formulario</h2>
-      <form onSubmit={handleSubmit}>
+      <form onSubmit={handleSubmit} name="contact" method="POST" data-netlify="true">
         <input type="text" name="name" placeholder="nombre" onChange={handleChange} onBlur={handleBlur} value={form.name} required />
         {errors.name && <small style={styles}>{errors.name}</small>}
         <input type="email" name="email" placeholder="email" onChange={handleChange} onBlur={handleBlur} value={form.email} required />
@@ -69,6 +69,7 @@ export const Formulario = () => {
         <textarea name="comment"  cols="50" rows="5" placeholder="escribe" onChange={handleChange} onBlur={handleBlur} value={form.comment} required></textarea>
         {errors.comment && <small style={styles}>{errors.comment}</small>}
         <input type="submit" value="ENVIAR" />
+        <button type="submit">Send</button>
       </form>
       {loading && <p>Cargando...</p>}
       {response && <h3>Mensaje enviado con exito!</h3>}
