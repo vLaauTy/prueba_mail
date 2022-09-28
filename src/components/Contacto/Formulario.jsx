@@ -58,21 +58,26 @@ export const Formulario = () => {
   } = useForm(initialForm, validationsForm);
   return (
     <div>
-      <h2>Formulario</h2>
-      <form onSubmit={handleSubmit} name="contact" method="POST" data-netlify="true">
-        <input type="text" name="name" placeholder="nombre" onChange={handleChange} onBlur={handleBlur} value={form.name} required />
-        {errors.name && <small style={styles}>{errors.name}</small>}
-        <input type="email" name="email" placeholder="email" onChange={handleChange} onBlur={handleBlur} value={form.email} required />
-        {errors.email && <small style={styles}>{errors.email}</small>}
-        <input type="text" name="subject" placeholder="asunto" onChange={handleChange} onBlur={handleBlur} value={form.subject} required />
-        {errors.subject && <small style={styles}>{errors.subject}</small>}
-        <textarea name="comment"  cols="50" rows="5" placeholder="escribe" onChange={handleChange} onBlur={handleBlur} value={form.comment} required></textarea>
-        {errors.comment && <small style={styles}>{errors.comment}</small>}
-        <input type="submit" value="ENVIAR" />
-        <button type="submit">Send</button>
-      </form>
-      {loading && <p>Cargando...</p>}
-      {response && <h3>Mensaje enviado con exito!</h3>}
+      <form name="contact" method="POST" data-netlify="true">
+  <p>
+    <label>Your Name: <input type="text" name="name" /></label>
+  </p>
+  <p>
+    <label>Your Email: <input type="email" name="email" /></label>
+  </p>
+  <p>
+    <label>Your Role: <select name="role[]" multiple>
+      <option value="leader">Leader</option>
+      <option value="follower">Follower</option>
+    </select></label>
+  </p>
+  <p>
+    <label>Message: <textarea name="message"></textarea></label>
+  </p>
+  <p>
+    <button type="submit">Send</button>
+  </p>
+</form>
     </div>
   );
 };
