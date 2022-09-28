@@ -11,25 +11,30 @@ export const Formulario = () => {
   
   return (
     <div>
-      <form name="contact" method="POST" data-netlify="true">
-  <p>
-    <label>Your Name: <input type="text" name="name" /></label>
-  </p>
-  <p>
-    <label>Your Email: <input type="email" name="email" /></label>
-  </p>
-  <p>
-    <label>Your Role: <select name="role[]" multiple>
-      <option value="leader">Leader</option>
-      <option value="follower">Follower</option>
-    </select></label>
-  </p>
-  <p>
-    <label>Message: <textarea name="message"></textarea></label>
-  </p>
-  <p>
+      <form name="contact v1" method="post" data-netlify="true" onSubmit="submit">
+ 
+  <input type="hidden" name="form-name" value="contact v1" />
+  <div>
+    <label>First Name <br/>
+    <input type="text" name="first-name"/>
+    </label>
+  </div>
+
+  <div>
+    <label htmlFor="email">Email <br/>
+    <input id="email" type="email" name="email"/>
+    </label>
+  </div>
+
+  <div>
+    <label >Mensaje <br/>
+    <textarea name="comments" id="" cols="30" rows="10"></textarea>
+    </label>
+  </div>
+
+
     <button type="submit">Send</button>
-  </p>
+  
 </form>
     </div>
   );
